@@ -1,6 +1,10 @@
 # Compiled class file
 *.class
 lib
+.gradle
+.idea
+build
+gradle.properties
 
 # Log file
 *.log

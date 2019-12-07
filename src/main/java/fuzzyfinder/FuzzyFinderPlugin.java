@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package skeleton;
+package fuzzyfinder;
 
 import java.awt.BorderLayout;
 
@@ -23,7 +23,6 @@ import docking.ActionContext;
 import docking.ComponentProvider;
 import docking.action.DockingAction;
 import docking.action.ToolBarData;
-import ghidra.app.ExamplesPluginPackage;
 import ghidra.app.plugin.PluginCategoryNames;
 import ghidra.app.plugin.ProgramPlugin;
 import ghidra.framework.plugintool.*;
@@ -32,19 +31,15 @@ import ghidra.util.HelpLocation;
 import ghidra.util.Msg;
 import resources.Icons;
 
-/**
- * TODO: Provide class-level documentation that describes what this plugin does.
- */
-//@formatter:off
 @PluginInfo(
 	status = PluginStatus.STABLE,
-	packageName = ExamplesPluginPackage.NAME,
-	category = PluginCategoryNames.EXAMPLES,
-	shortDescription = "Plugin short description goes here.",
-	description = "Plugin long description goes here."
+	packageName = "Fuzzy Finder",
+	category = PluginCategoryNames.NAVIGATION,
+	shortDescription = "Fuzzy finder for Ghidra",
+	description = "Fuzzy finder for finding symbols, functions and labels in Ghidra"
 )
 //@formatter:on
-public class SkeletonPlugin extends ProgramPlugin {
+public class FuzzyFinderPlugin extends ProgramPlugin {
 
 	MyProvider provider;
 
@@ -53,10 +48,9 @@ public class SkeletonPlugin extends ProgramPlugin {
 	 * 
 	 * @param tool The plugin tool that this plugin is added to.
 	 */
-	public SkeletonPlugin(PluginTool tool) {
+	public FuzzyFinderPlugin(PluginTool tool) {
 		super(tool, true, true);
 
-		// TODO: Customize provider (or remove if a provider is not desired)
 		String pluginName = getName();
 		provider = new MyProvider(this, pluginName);
 
