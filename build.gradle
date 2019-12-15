@@ -33,3 +33,10 @@ else {
 	throw new GradleException("GHIDRA_INSTALL_DIR is not defined!")
 }
 //----------------------END "DO NOT MODIFY" SECTION-------------------------------
+
+repositories {
+	jcenter()
+}
+dependencies {
+	implementation 'me.xdrop:fuzzywuzzy:1.2.0'
+}
